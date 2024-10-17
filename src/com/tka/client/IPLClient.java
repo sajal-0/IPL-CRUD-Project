@@ -14,6 +14,7 @@ public class IPLClient {
 	
 		Scanner sc = new Scanner(System.in);
 			IPLController con = new IPLController();
+			IPLDao dao= new IPLDao();
 			
 		
 
@@ -23,8 +24,8 @@ public class IPLClient {
 				System.out.println("0 to Print players \n" +"1 get player of perticular team\n"+ "2 to Print all batters\n"
 						+"3 to print allBowlers\n"+"4 to print all allrounders\n" + "5 to print batters of specific team\n"
 						+ "6 to print bowlers of specific team\n"+"7 to print all allRounder of Specific team\n"
-						+"8 Name of teams\n"
-				+"9 Exit the application\n" + "10 Enter the valid input\n" );
+						+"8 Name of teams\n"+"9 Add Players in the team\n"
+				+"10 Exit the application\n" + "11 Enter the valid input\n" );
 
 				int option = sc.nextInt();
 				sc.nextLine();
@@ -154,10 +155,25 @@ public class IPLClient {
 					System.out.println(set);
 					break;
 				case 9:
+				System.out.println("Add the player in the team :");
+				List<Players> list = con.addPlayer();
+				System.out.printf("+---------------------+-----------+-------+---------+------+\n");
+				System.out.printf("| %-19s | %-9s | %-5s | %-7s | %-4s |\n", "Player Name", "Jersey No", "Runs", "Wickets", "Team");
+				System.out.printf("+---------------------+-----------+-------+---------+------+\n");
+				for (Players player : list) {
+					System.out.printf("| %-19s | %-9d | %-5d | %-7d | %-4s |\n",
+							player.getName(), player.getJersey_No(), player.getRuns(), player.getWickets(), player.getTeam());
+				}
+				System.out.printf("+---------------------+-----------+-------+---------+------+\n");
+
+				break;
+				
+				
+				case 10:
 					System.out.println("Exiting the application. Thank you!");
 					System.exit(0); 
 					break;
-				
+			
 				default:
 					System.out.println("Invalid option. Please try again.");
 					break;

@@ -101,8 +101,12 @@ public class IPLService {
 		return set;
 	}
 
+	public List<Players> addPlayers() {
+		dao = new IPLDao();
+		List<Players> add = dao.addPlayers();
 	
-	
+		return add;
+	}
 
 	
 

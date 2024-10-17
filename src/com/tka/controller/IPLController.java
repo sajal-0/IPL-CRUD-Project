@@ -71,7 +71,11 @@ public class IPLController {
 		return teamsName;
 	}
 	
-
+	public List<Players> addPlayer(){
+		service = new IPLService();
+		List<Players> add = service.addPlayers();
+		return add;
+	}
 
 
 	
