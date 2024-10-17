@@ -5,6 +5,7 @@ import java.util.Scanner;
 import java.util.Set;
 
 import com.tka.controller.IPLController;
+import com.tka.dao.IPLDao;
 import com.tka.entity.Players;
 
 public class IPLClient {
@@ -13,6 +14,7 @@ public class IPLClient {
 	
 		Scanner sc = new Scanner(System.in);
 			IPLController con = new IPLController();
+			
 		
 
 			do{
@@ -155,6 +157,7 @@ public class IPLClient {
 					System.out.println("Exiting the application. Thank you!");
 					System.exit(0); 
 					break;
+				
 				default:
 					System.out.println("Invalid option. Please try again.");
 					break;

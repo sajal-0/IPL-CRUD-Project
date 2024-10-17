@@ -11,6 +11,7 @@ import com.tka.entity.Players;
 public class IPLService {
 	IPLDao dao = null;
 	List<Players> team = getAllPlayers();
+	
 
 	
 	public List<Players> getAllPlayers() {
@@ -99,6 +100,9 @@ public class IPLService {
 		}
 		return set;
 	}
+
+	
+	
 
 	
 

@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 import com.tka.entity.Players;
 import com.tka.utility.IPLUtility;
@@ -14,6 +15,7 @@ public class IPLDao {
 
 	Statement st = null;
 	ResultSet rs = null;
+	
 
 	public List<Players> getAllPLayers() {
 		String sql = "SELECT * FROM iplteams.players";
@@ -44,34 +46,36 @@ public class IPLDao {
 		return list;
 	}
 
-	public List<Players> addPlayers() {
-		String sql = "INSERT INTO batch1199.playersipl(jersey_No,name,runs,wickets,team) VALUES  (?, ?, ?, ?, ?)";
-		List<Players> allPlayers = getAllPLayers();
+	public void addPlayers() {
+		String sql = "INSERT INTO iplteams.players(jersey_No,name,runs,wickets,team) VALUES  (?, ?, ?, ?, ?)";
+		
 
 		try {
 			Connection con = IPLUtility.support();
 
 			PreparedStatement ps = con.prepareStatement(sql);
 
-			rs = st.executeQuery(sql);
 
-			for (Players player : allPlayers) {
-				ps.setInt(1, player.getJersey_No());
-				ps.setString(2, player.getName());
-				ps.setInt(3, player.getRuns());
-				ps.setInt(4, player.getWickets());
-				ps.setString(5, player.getTeam());
+			
+				ps.setInt(1,745);
+				ps.setString(2, "Narendra Yadav");
+				ps.setInt(3, 5400);
+				ps.setInt(4, 42);
+				ps.setString(5, "MI");
 
-				ps.addBatch(); 
-			}
-			ps.executeBatch();
+				ps.executeUpdate();
+				System.out.println("upadate query");
+				
+
 			ps.close();
+
+			
 
 		} catch (Exception e) {
 
 			e.printStackTrace();
 		}
-		return allPlayers;
+		
 	}
 
 }
