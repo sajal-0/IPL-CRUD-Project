@@ -76,6 +76,14 @@ public class IPLController {
 		List<Players> add = service.addPlayers();
 		return add;
 	}
+	
+	public List<Players> deletePlayer(int jn) {
+		service = new IPLService();
+		List<Players> delete = service.deletePlayer(jn);
+		return delete;
+	}
+
+	
 
 
 	

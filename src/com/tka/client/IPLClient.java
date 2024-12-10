@@ -174,6 +174,18 @@ public class IPLClient {
 					System.exit(0); 
 					break;
 			
+				case 11:
+					System.out.println("Delete player data from table");
+					List<Players> delete = con.deletePlayer(sc.nextInt());
+					System.out.printf("+---------------------+-----------+-------+---------+------+\n");
+					System.out.printf("| %-19s | %-9s | %-5s | %-7s | %-4s |\n", "Player Name", "Jersey No", "Runs", "Wickets", "Team");
+					System.out.printf("+---------------------+-----------+-------+---------+------+\n");
+					for (Players player : delete) {
+						System.out.printf("| %-19s | %-9d | %-5d | %-7d | %-4s |\n",
+								player.getName(), player.getJersey_No(), player.getRuns(), player.getWickets(), player.getTeam());
+					}
+					System.out.printf("+---------------------+-----------+-------+---------+------+\n");
+break;
 				default:
 					System.out.println("Invalid option. Please try again.");
 					break;

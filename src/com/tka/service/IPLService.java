@@ -107,6 +107,11 @@ public class IPLService {
 	
 		return add;
 	}
+	
+	public List<Players> deletePlayer(int jn) {
+	
+		return dao.deletePlayer(jn);
+	}
 
 	
 
