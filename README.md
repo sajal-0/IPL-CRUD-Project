@@ -159,7 +159,7 @@ Enter your choice:
 
 For any queries or suggestions, please contact:
 
-- **Email:** (mailto\:sajalbagde@gmail.com)
+- **Email:** (sajalbagde@gmail.com)
 - **GitHub:** ((https://github.com/sajal-0))
 
 ---
